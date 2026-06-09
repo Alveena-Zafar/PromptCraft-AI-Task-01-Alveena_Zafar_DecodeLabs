@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromptCraft AI • Master Prompt Engineering</title>
+  <link rel="stylesheet" href="style.css">
+  <!--
+    PILLAR 2 (Visual Design): Max 2 font families, 3 weights
+    Headlines: Montserrat (geometric) | Body: Open Sans (readable)
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<!--
+  =====================================================
+  SEMANTIC HTML5 STRUCTURE (Pillar 3 - Foundation)
+  <header>  = Branding & Wayfinding
+  <nav>     = Navigation links
+  <main>    = Core narrative / page content
+  <section> = Grouped thematic content
+  <article> = Distributable content units (library cards)
+  <footer>  = Terminal metadata
+  =====================================================
+-->
+
+<body>
+
+  <!-- ── HEADER: sticky top bar with logo + nav ── -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+
+      <!-- Logo / Brand -->
+      <a href="#home" class="logo" aria-label="PromptCraft AI Home">
+        PromptCraft <span class="logo-accent">AI</span>
+      </a>
+
+      <!-- Desktop navigation links -->
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="#home"       class="nav-link">Home</a></li>
+        <li><a href="#categories" class="nav-link">Categories</a></li>
+        <li><a href="#generator"  class="nav-link">Generator</a></li>
+        <li><a href="#tips"       class="nav-link">Tips</a></li>
+        </ul>
+
+      <!-- Right-side controls -->
+      <div class="nav-controls">
+        <!-- Dark mode toggle -->
+        <button id="dark-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+          🌙
+        </button>
+        <!-- Hamburger (mobile only) -->
+        <button id="nav-toggle" class="icon-btn hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- ── MAIN: all primary content lives here ── -->
+  <main>
+
+    <!-- ── HERO SECTION ── -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+
+        <div class="hero-text">
+          <h1 id="hero-title">
+            Master the Art of<br>
+            <span class="highlight">Prompt Engineering</span>
+          </h1>
+          <p class="hero-desc">
+            Transform how you communicate with AI. Explore templates,
+            generate powerful prompts, and level up your skills.
+          </p>
+          <a href="#generator" class="btn btn-primary">Try Generator →</a>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <!--
+            Using a CSS-drawn illustration instead of a third-party image.
+            This is better for performance and avoids broken image links.
+          -->
+          <div class="hero-illustration">
+            <div class="bubble b1">💡</div>
+            <div class="bubble b2">🤖</div>
+            <div class="bubble b3">✍️</div>
+            <div class="bubble b4">📚</div>
+            <div class="card-preview">
+              <p class="card-preview-label">Generated Prompt</p>
+              <p class="card-preview-text">
+                "Explain recursion with a real-world example suitable for beginners..."
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── CATEGORIES SECTION ── -->
+    <section id="categories" class="section" aria-labelledby="categories-title">
+      <div class="container">
+        <h2 id="categories-title" class="section-title">Prompt Categories</h2>
+        <p class="section-subtitle">Choose a domain and start crafting better prompts</p>
+
+        <!--
+          CSS Grid: auto-fit / minmax handles responsiveness automatically.
+          On mobile → 1 col, tablet → 2 col, desktop → 4 col.
+        -->
+        <div class="categories-grid" role="list">
+
+          <div class="category-card" role="listitem">
+            <span class="card-icon" aria-hidden="true">📚</span>
+            <h3>Study Prompts</h3>
+            <p>Learn faster with AI-powered study plans and explanations.</p>
+          </div>
+
+          <div class="category-card" role="listitem">
+            <span class="card-icon" aria-hidden="true">💻</span>
+            <h3>Coding Prompts</h3>
+            <p>Debug, build, and understand code with precision.</p>
+          </div>
+
+          <div class="category-card" role="listitem">
+            <span class="card-icon" aria-hidden="true">✍️</span>
+            <h3>Writing Prompts</h3>
+            <p>Craft emails, posts, and essays with clarity.</p>
+          </div>
+
+          <div class="category-card" role="listitem">
+            <span class="card-icon" aria-hidden="true">📈</span>
+            <h3>Business Prompts</h3>
+            <p>Strategies, plans, and pitches for real results.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── PROMPT GENERATOR SECTION ── -->
+    <section id="generator" class="section section-alt" aria-labelledby="generator-title">
+      <div class="container">
+        <h2 id="generator-title" class="section-title">AI Prompt Generator</h2>
+        <p class="section-subtitle">Select a category and difficulty, then generate a prompt</p>
+
+        <div class="generator-box">
+
+          <!-- Form controls — grouped logically with labels for accessibility -->
+          <div class="generator-controls">
+
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select id="category" name="category">
+                <option value="">— Select Category —</option>
+                <option value="study">📚 Study</option>
+                <option value="coding">💻 Coding</option>
+                <option value="writing">✍️ Writing</option>
+                <option value="business">📈 Business</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="difficulty">Difficulty</label>
+              <select id="difficulty" name="difficulty">
+                <option value="">— Select Difficulty —</option>
+                <option value="beginner">🟢 Beginner</option>
+                <option value="intermediate">🟡 Intermediate</option>
+                <option value="advanced">🔴 Advanced</option>
+              </select>
+            </div>
+
+            <button id="generate-btn" class="btn btn-primary" type="button">
+              Generate Prompt
+            </button>
+
+          </div>
+
+          <!-- Generated output area (hidden until a prompt is generated) -->
+          <div id="prompt-output" class="prompt-output hidden" role="region" aria-live="polite" aria-label="Generated prompt">
+            <p id="prompt-text"></p>
+            <button id="copy-btn" class="btn btn-secondary" type="button">
+              📋 Copy Prompt
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── TIPS SECTION ── -->
+    <section id="tips" class="section" aria-labelledby="tips-title">
+      <div class="container">
+        <h2 id="tips-title" class="section-title">Prompt Engineering Tips</h2>
+        <p class="section-subtitle">Small changes in wording make a huge difference</p>
+
+        <div class="tips-grid">
+
+          <div class="tip-card">
+            <h3>💡 Be Specific</h3>
+            <div class="tip-comparison">
+              <div class="tip-bad">
+                <span class="label bad">❌ Vague</span>
+                <p>Teach me Java</p>
+              </div>
+              <div class="tip-good">
+                <span class="label good">✅ Better</span>
+                <p>Teach me Java with practical examples for beginners.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tip-card">
+            <h3>🎯 Give Context</h3>
+            <div class="tip-comparison">
+              <div class="tip-bad">
+                <span class="label bad">❌ Vague</span>
+                <p>Write an email</p>
+              </div>
+              <div class="tip-good">
+                <span class="label good">✅ Better</span>
+                <p>Write a professional internship request email to a tech company.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tip-card">
+            <h3>🎭 Assign a Role</h3>
+            <div class="tip-comparison">
+              <div class="tip-bad">
+                <span class="label bad">❌ Vague</span>
+                <p>Explain this concept</p>
+              </div>
+              <div class="tip-good">
+                <span class="label good">✅ Better</span>
+                <p>Act as a teacher. Explain this to a 12-year-old student.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tip-card">
+            <h3>📋 Specify Format</h3>
+            <div class="tip-comparison">
+              <div class="tip-bad">
+                <span class="label bad">❌ Vague</span>
+                <p>Give me steps</p>
+              </div>
+              <div class="tip-good">
+                <span class="label good">✅ Better</span>
+                <p>Give me 5 numbered steps to set up a Python environment.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+        <!-- Search input -->
+        <div class="search-wrapper">
+          <label for="search" class="sr-only">Search prompts</label>
+          <input
+            type="search"
+            id="search"
+            class="search-bar"
+            placeholder="🔍 Search by topic or category..."
+            aria-controls="prompt-list"
+          >
+        </div>
+
+        <!--
+          <article> = each prompt card is a distributable content unit.
+          This is correct semantic HTML — per Pillar 3 guidelines.
+        -->
+        <div id="prompt-list" class="library-grid" role="list" aria-label="Prompt library">
+          <!-- Cards injected by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── CONTACT SECTION ── -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a question or suggestion? Drop us a message.</p>
+
+        <form id="contact-form" class="contact-form" novalidate>
+
+          <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="e.g. Ali Hassan" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email Address</label>
+            <input type="email" id="contact-email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message ✉️</button>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── FOOTER: terminal metadata ── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-brand">PromptCraft <span class="logo-accent">AI</span></p>
+      <p class="footer-meta">© 2026 DecodeLabs Full Stack Project 1 · Batch 2026</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#generator">Generator</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
