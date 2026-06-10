@@ -7,14 +7,12 @@
 ## 📌 Table of Contents
 
 - [Overview](#-overview)
-- [Live Demo](#-live-demo)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Project Structure](#-project-structure)
 - [Design System](#-design-system)
 - [Key Implementation Highlights](#-key-implementation-highlights)
 - [Getting Started](#-getting-started)
-- [Screenshots](#-screenshots)
 - [What I Learned](#-what-i-learned)
 - [Future Improvements](#-future-improvements)
 - [Author](#-author)
